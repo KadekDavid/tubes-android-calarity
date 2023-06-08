@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calarity</string>
+    <string name="welcome">Selamat Datang</string>
+    <string name="ket">Explorasi desain sesuai kebutuhanmu</string>
+    <string name="email">Masukkan Email</string>
+    <string name="pass">Masukkan Password</string>
+</resources>
