@@ -4,14 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/recycleView"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    tools:context=".ui.home.HomeActivity"
+    tools:listitem="@layout/item_home"
+    android:background="?android:selectableItemBackground">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -26,7 +29,7 @@
                 android:layout_height="100dp"
                 android:contentDescription="logo"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/logo" />
+                tools:src="@drawable/baseline_broken_image_24" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,14 +40,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Desain Poster Iklan"
-                    android:textSize="10sp" />
+                    tools:text="Desain Poster Iklan"
+                    android:textSize="10sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Rp. 15.000"
+                    tools:text="Rp. 15.000"
                     android:textSize="8sp" />
 
             </LinearLayout>
