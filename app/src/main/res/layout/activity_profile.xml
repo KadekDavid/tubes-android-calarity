@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.register.RegisterActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.register.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,15 +16,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/profile"
-                android:layout_width="80dp"
+                android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:background="@drawable/logo"
                 android:layout_marginTop="16dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/circular"
+                app:strokeColor="@color/pink"
+                app:strokeWidth="5dp" />
 
             <TextView
                 android:id="@+id/textView"
@@ -42,9 +47,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="falahdwh@gmail.com"
-                android:layout_marginTop="2dp"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -54,68 +59,69 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edtEmailLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        app:hintTextColor="@color/pink"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:layout_marginTop="20dp"
+        android:hint="Email"
+        app:hintTextColor="@color/pink">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edtNamaLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:hint="Nama"
-        android:layout_marginTop="8dp"
-        app:hintTextColor="@color/pink"
         android:layout_gravity="center"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:layout_marginTop="8dp"
+        android:hint="Nama"
+        app:hintTextColor="@color/pink">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edtPasswordLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:hint="Kata Sandi"
-        android:layout_marginTop="8dp"
         android:layout_gravity="center"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:layout_marginTop="8dp"
+        android:hint="Kata Sandi">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
-        android:text="LOGOUT"
         android:backgroundTint="@color/pink"
-        app:cornerRadius ="6dp"/>
+        android:text="LOGOUT"
+        app:cornerRadius="6dp" />
 
 
 </LinearLayout>

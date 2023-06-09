@@ -4,4 +4,13 @@
     <string name="ket">Explorasi desain sesuai kebutuhanmu</string>
     <string name="email">Masukkan Email</string>
     <string name="pass">Masukkan Password</string>
+    <string name="katalog_desain">KATALOG DESAIN</string>
+    <string name="keranjang">keranjang</string>
+    <string name="logoTv">LOGO</string>
+    <string name="feedTv">FEED</string>
+    <string name="posterTv">POSTER</string>
+    <string name="keranjangTv">KERANJANG</string>
+    <string name="fab_content_desc">BELI</string>
+    <string name="extended_fab_label">BELI</string>
+    <string name="extended_fab_content_desc">BELI</string>
 </resources>

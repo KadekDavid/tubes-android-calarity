@@ -178,8 +178,8 @@
                     android:src="@drawable/baseline_shopping_cart_24"
                     android:layout_gravity="center"
                     app:backgroundTint="@color/pink"
-                    app:tint="#FFFFFF"
-                    android:contentDescription="Tombol Keranjang Belanja"/>
+                    app:tint="#FFFFFF"/>
+
 
             </com.google.android.material.bottomnavigation.BottomNavigationView>
 
