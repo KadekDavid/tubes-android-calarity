@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "80785153004",
-    "firebase_url": "https://calarity-8ee60-default-rtdb.firebaseio.com",
-    "project_id": "calarity-8ee60",
-    "storage_bucket": "calarity-8ee60.appspot.com"
+    "project_number": "769155404290",
+    "project_id": "calarity-a21ab",
+    "storage_bucket": "calarity-a21ab.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:80785153004:android:c9c9578b40674758c3bec9",
+        "mobilesdk_app_id": "1:769155404290:android:0db562b7096b254c708d1b",
         "android_client_info": {
           "package_name": "org.d3if0126.myapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "80785153004-161f5tuc7o6h8i8ke3sv5ulqakdplm8r.apps.googleusercontent.com",
+          "client_id": "769155404290-h501vj310gkeiq1oj6v5e4bofo36pehk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCionlm-iC8j9oREE43OS1-k1GJqXhxLes"
+          "current_key": "AIzaSyBEx1Zt2i76XwqGM_Y_OZJFXdsS4wyJupQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "80785153004-161f5tuc7o6h8i8ke3sv5ulqakdplm8r.apps.googleusercontent.com",
+              "client_id": "769155404290-h501vj310gkeiq1oj6v5e4bofo36pehk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
