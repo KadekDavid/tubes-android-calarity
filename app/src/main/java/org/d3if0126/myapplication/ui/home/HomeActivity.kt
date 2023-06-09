@@ -17,19 +17,20 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.bottomNavigation.setOnMenuItemClickListener { menuItem ->
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.home -> {
                     true
                 }
 
                 R.id.account -> {
-                    startActivity(Intent(this, ProfileActivity::class.java))
+                    startActivity(Intent(this@HomeActivity, ProfileActivity::class.java))
                     true
                 }
 
                 else -> false
             }
         }
+
     }
 }
