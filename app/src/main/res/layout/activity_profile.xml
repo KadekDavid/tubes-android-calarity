@@ -32,7 +32,7 @@
                 app:strokeWidth="5dp" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvnamaa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -45,73 +45,46 @@
                 app:layout_constraintTop_toBottomOf="@+id/profile" />
 
             <TextView
+                android:id="@+id/tvEmaill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="falahdwh@gmail.com"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintEnd_toEndOf="@+id/tvnamaa"
+                app:layout_constraintStart_toStartOf="@+id/tvnamaa"
+                app:layout_constraintTop_toBottomOf="@+id/tvnamaa" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edtEmailLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="256dp"
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:hint="Email"
-        app:hintTextColor="@color/pink">
+        android:text="Email"
+        android:textColor="@color/pink"
+        android:textSize="16sp" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="textEmailAddress" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edtNamaLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="256dp"
+    <TextView
+        android:id="@+id/tvNama"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:hint="Nama"
-        app:hintTextColor="@color/pink">
+        android:text="Nama"
+        android:textColor="@color/pink"
+        android:textSize="16sp" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtNama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="textEmailAddress" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edtPasswordLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="256dp"
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:hint="Kata Sandi">
+        android:text="Kata Sandi"
+        android:textColor="@color/pink"
+        android:textSize="16sp" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="textPassword" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonLogout"

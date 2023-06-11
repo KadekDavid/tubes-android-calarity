@@ -11,6 +11,7 @@ import org.d3if0126.myapplication.databinding.ActivityRegisterBinding
 
 
 class RegisterActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
@@ -25,31 +26,31 @@ class RegisterActivity : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().reference
 
         binding.belumPunya.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            var intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
         binding.button.setOnClickListener {
-            val email = binding.edtEmail.text.toString()
-            val name = binding.edtNama.text.toString()
-            val pass = binding.edtPassword.text.toString()
-            val confirmPass = binding.edtConfirmPass.text.toString()
+            var email = binding.edtEmail.text.toString()
+            var name = binding.edtNama.text.toString()
+            var pass = binding.edtPassword.text.toString()
+            var confirmPass = binding.edtConfirmPass.text.toString()
 
             if (name.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
                 if (pass == confirmPass) {
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            val currentUser = firebaseAuth.currentUser
+                            var currentUser = firebaseAuth.currentUser
                             if (currentUser != null) {
-                                val uid = currentUser.uid
+                                var uid = currentUser.uid
 
-                                val user = User(name,email)
+                                var user = User(name,email)
 
-                                val userRef = databaseReference.child("users").child(uid)
+                                var userRef = databaseReference.child("users").child(uid)
                                 userRef.setValue(user).addOnCompleteListener {
                                         userTask ->
                                     if (userTask.isSuccessful) {
-                                        val intent = Intent(this, LoginActivity::class.java)
+                                        var intent = Intent(this, LoginActivity::class.java)
                                         startActivity(intent)
                                         finish()
                                     } else {

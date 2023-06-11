@@ -13,6 +13,7 @@ import org.d3if0126.myapplication.databinding.ActivityLoginBinding
 import org.d3if0126.myapplication.ui.home.HomeActivity
 
 
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -28,27 +29,27 @@ class LoginActivity : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().reference
 
         binding.daftarSekarang.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
+            var intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
         binding.button.setOnClickListener {
-            val email = binding.edtEmail.text.toString()
-            val pass = binding.edtPassword.text.toString()
+            var email = binding.edtEmail.text.toString()
+            var pass = binding.edtPassword.text.toString()
 
             if (email.isNotEmpty() && pass.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        val currentUser = firebaseAuth.currentUser
+                        var currentUser = firebaseAuth.currentUser
                         if (currentUser != null) {
-                            val uid = currentUser.uid
+                            var uid = currentUser.uid
 
-                            val userRef = databaseReference.child("users").child(uid)
+                            var userRef = databaseReference.child("users").child(uid)
                             userRef.addListenerForSingleValueEvent(object : ValueEventListener {
                                 override fun onDataChange(snapshot: DataSnapshot) {
                                     if (snapshot.exists()) {
-                                        val user = snapshot.getValue(User::class.java)
 
+                                        var user = snapshot.getValue(User::class.java)
                                         if (user != null) {
                                             val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                                             startActivity(intent)
@@ -56,7 +57,6 @@ class LoginActivity : AppCompatActivity() {
                                         }
                                     }
                                 }
-
                                 override fun onCancelled(error: DatabaseError) {
                                     Toast.makeText(this@LoginActivity, error.message, Toast.LENGTH_SHORT).show()
                                 }
@@ -71,12 +71,10 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
     override fun onStart() {
         super.onStart()
-
         if (firebaseAuth.currentUser != null) {
-            val intent = Intent(this, HomeActivity::class.java)
+            var intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
