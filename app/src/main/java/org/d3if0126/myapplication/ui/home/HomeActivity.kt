@@ -30,7 +30,6 @@ class HomeActivity : AppCompatActivity() {
         listImages = arrayListOf()
         recyclerView.layoutManager = GridLayoutManager(this, 2)
 
-
         databaseReference = FirebaseDatabase.getInstance().getReference("mitraGambar")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

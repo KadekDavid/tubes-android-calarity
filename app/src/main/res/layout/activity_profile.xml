@@ -7,69 +7,265 @@
     android:orientation="vertical"
     tools:context=".ui.user.RegisterActivity">
 
-    <LinearLayout
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtAlamat"
+            android:layout_width="203dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="20dp"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textUserID"
+            app:layout_constraintTop_toBottomOf="@+id/edtNoHP" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/profile"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="16dp"
-                android:padding="5dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/logo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/circular"
-                app:strokeColor="@color/pink"
-                app:strokeWidth="5dp" />
+        <TextView
+            android:id="@+id/textNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="32dp"
+            android:text="Nama"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInfoProfil" />
 
-            <TextView
-                android:id="@+id/tvNamaa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:text="Falah Dwi Handoyo"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/profile"
-                app:layout_constraintStart_toStartOf="@+id/profile"
-                app:layout_constraintTop_toBottomOf="@+id/profile" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circular"
+            app:strokeColor="@color/pink"
+            app:strokeWidth="5dp" />
 
-            <TextView
-                android:id="@+id/tvEmaill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="falahdwh@gmail.com"
-                app:layout_constraintEnd_toEndOf="@+id/tvNamaa"
-                app:layout_constraintStart_toStartOf="@+id/tvNamaa"
-                app:layout_constraintTop_toBottomOf="@+id/tvNamaa" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvNamaa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Falah Dwi Handoyo"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/profile"
+            app:layout_constraintStart_toStartOf="@+id/profile"
+            app:layout_constraintTop_toBottomOf="@+id/profile" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tvEmaill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="falahdwh@gmail.com"
+            app:layout_constraintEnd_toEndOf="@+id/tvNamaa"
+            app:layout_constraintStart_toStartOf="@+id/tvNamaa"
+            app:layout_constraintTop_toBottomOf="@+id/tvNamaa" />
+
+        <TextView
+            android:id="@+id/textInfoProfil"
+            android:layout_width="91dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="16dp"
+            android:text="Info profil"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pembatas1" />
 
 
-    <Button
-        android:id="@+id/buttonLogout"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/pink"
-        android:text="LOGOUT"
-        app:cornerRadius="6dp" />
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="206dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="90dp"
+            android:backgroundTint="@color/pink"
+            android:text="SAVE"
+            app:cornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/buttonLogout"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/pink"
+            android:text="LOGOUT"
+            app:cornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/pembatas1"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmaill" />
+
+        <TextView
+            android:id="@+id/textUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="18dp"
+            android:text="Password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="18dp"
+            android:text="Email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textNama" />
+
+        <View
+            android:id="@+id/pembatas2"
+            android:layout_width="460dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textUsername" />
+
+        <TextView
+            android:id="@+id/textInfoPribadi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="18dp"
+            android:text="Info pribadi"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pembatas2" />
+
+        <TextView
+            android:id="@+id/textUserID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="32dp"
+            android:text="User ID"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInfoPribadi" />
+
+        <TextView
+            android:id="@+id/textNomorHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="40dp"
+            android:text="Nomor HP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textUserID" />
+
+        <TextView
+            android:id="@+id/textAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="40dp"
+            android:text="Alamat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textNomorHP" />
+
+        <TextView
+            android:id="@+id/textHasilNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="32dp"
+            android:text="Falah Dwihandoyo"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textNama"
+            app:layout_constraintTop_toBottomOf="@+id/textInfoProfil" />
+
+        <TextView
+            android:id="@+id/textHasilEmail"
+            android:layout_width="162dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="18dp"
+            android:text="falahdwh@gmail.com"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textNama"
+            app:layout_constraintTop_toBottomOf="@+id/textHasilNama" />
+
+        <TextView
+            android:id="@+id/textHasilPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="18dp"
+            android:text="falahdwi"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textNama"
+            app:layout_constraintTop_toBottomOf="@+id/textHasilEmail" />
 
 
+        <ImageButton
+            android:id="@+id/showPasswordButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_eye_closed"
+            app:layout_constraintBottom_toTopOf="@+id/pembatas2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textHasilPassword"
+            app:layout_constraintTop_toBottomOf="@+id/textHasilEmail" />
+
+        <TextView
+            android:id="@+id/textHasilUserId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="32dp"
+            android:text="KtcdJrLNiTWy6Z3Y8zqq09RfwO32"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textUserID"
+            app:layout_constraintTop_toBottomOf="@+id/textInfoPribadi" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtNoHP"
+            android:layout_width="203dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="28dp"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textUserID"
+            app:layout_constraintTop_toBottomOf="@+id/textHasilUserId" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
-
-

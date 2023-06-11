@@ -45,7 +45,7 @@ class RegisterActivity : AppCompatActivity() {
                             if (currentUser != null) {
                                 var uid = currentUser.uid
 
-                                var user = User(name,email)
+                                var user = User(name,email,pass)
 
                                 var userRef = databaseReference.child("users").child(uid)
                                 userRef.setValue(user).addOnCompleteListener {
