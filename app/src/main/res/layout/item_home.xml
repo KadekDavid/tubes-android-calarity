@@ -25,6 +25,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/ImageView2"
                 android:layout_width="130dp"
                 android:layout_height="100dp"
                 android:contentDescription="logo"
@@ -38,6 +39,7 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:id="@+id/judul"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Desain Poster Iklan"
@@ -45,6 +47,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/harga"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"

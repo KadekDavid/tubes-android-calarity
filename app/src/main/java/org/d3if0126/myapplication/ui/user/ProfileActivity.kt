@@ -1,5 +1,6 @@
 package org.d3if0126.myapplication.ui.user
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -31,9 +32,9 @@ class ProfileActivity : AppCompatActivity() {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     var user = dataSnapshot.getValue(User::class.java)
                     if (user != null) {
-                        binding.tvNama.text = user.name
-                        binding.tvEmail.text = user.email
-                        binding.tvPassword.text = user.password
+                        binding.tvNamaa.text = user.name
+                        binding.tvEmaill.text = user.email
+
                     }
                 }
 
@@ -49,5 +50,6 @@ class ProfileActivity : AppCompatActivity() {
             finish()
         }
     }
+
 }
 

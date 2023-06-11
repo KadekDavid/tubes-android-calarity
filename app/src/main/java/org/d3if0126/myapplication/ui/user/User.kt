@@ -1,10 +1,15 @@
 package org.d3if0126.myapplication.ui.user
 
-data class User(
+import androidx.annotation.Keep
+
+
+@Keep
+data class User (
     var name: String? = "",
     var email: String? = "",
     var password: String? = ""
 ) {
-    constructor() : this("", "", "")
+    constructor():this ("", "","")
 }
+
 
