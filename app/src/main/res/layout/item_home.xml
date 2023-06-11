@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/gambar"
+            android:id="@+id/ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -50,7 +50,6 @@
                     android:layout_marginTop="4dp"
                     tools:text="Rp. 15.000"
                     android:textSize="8sp" />
-
             </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
