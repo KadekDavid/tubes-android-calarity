@@ -6,11 +6,11 @@
     app:startDestination="@id/loginActivity">
     <activity
         android:id="@+id/loginActivity"
-        android:name="org.d3if0126.myapplication.ui.login.LoginActivity"
+        android:name="org.d3if0126.myapplication.ui.user.LoginActivity"
         android:label="LoginActivity" />
     <activity
         android:id="@+id/registerActivity2"
-        android:name="org.d3if0126.myapplication.ui.register.RegisterActivity"
+        android:name="org.d3if0126.myapplication.ui.user.RegisterActivity"
         android:label="activity_register"
         tools:layout="@layout/activity_register" />
     <activity

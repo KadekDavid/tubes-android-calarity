@@ -15,11 +15,11 @@
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="false" />
-        <activity android:name=".ui.register.RegisterActivity" />
-        <activity android:name=".ui.profile.ProfileActivity"/>
+        <activity android:name=".ui.user.RegisterActivity" />
+        <activity android:name=".ui.user.ProfileActivity"/>
         <activity android:name=".ui.keranjang.KeranjangActivity"/>
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name=".ui.user.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
