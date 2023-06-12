@@ -11,6 +11,8 @@
     <string name="posterTv">POSTER</string>
     <string name="keranjangTv">KERANJANG</string>
     <string name="fab_content_desc">BELI</string>
-    <string name="extended_fab_label">BELI</string>
+    <string name="extended_fab_label">Beli</string>
     <string name="extended_fab_content_desc">BELI</string>
+    <string name="transaksi">TRANSAKSI</string>
+    <string name="checkout">Checkout</string>
 </resources>

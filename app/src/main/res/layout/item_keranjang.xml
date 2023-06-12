@@ -5,19 +5,23 @@
     android:id="@+id/recycleView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
     android:background="?android:selectableItemBackground"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     tools:context=".ui.home.HomeActivity"
     tools:listitem="@layout/item_keranjang">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
+        android:background="#ececec"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/cardKeranjang"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
@@ -55,7 +59,7 @@
                     android:inputType="number"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toStartOf="@+id/addImageBtn"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <ImageButton
@@ -63,10 +67,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/baseline_add_24"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Tombol Tambah"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:contentDescription="Tombol Tambah"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -79,4 +84,13 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

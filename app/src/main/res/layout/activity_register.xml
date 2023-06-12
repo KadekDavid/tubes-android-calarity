@@ -4,121 +4,144 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.user.RegisterActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.user.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:orientation="vertical">
+
         <ImageView
             android:layout_width="83dp"
             android:layout_height="100dp"
-            android:background="@drawable/logo"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/logo" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="16dp"
             android:text="Buat Akun"
-            android:textStyle="bold"
             android:textSize="24sp"
-            android:layout_marginTop="16dp"/>
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Daftar dan jelajahi Calarity!"
             android:layout_marginHorizontal="8dp"
-            android:textSize="20sp"/>
+            android:text="Daftar dan jelajahi Calarity!"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edtEmailLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        app:hintTextColor="@color/pink"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:layout_marginTop="20dp"
+        android:hint="Email"
+        app:hintTextColor="@color/pink">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edtNamaLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:hint="Nama"
-        android:layout_marginTop="8dp"
-        app:hintTextColor="@color/pink"
         android:layout_gravity="center"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:layout_marginTop="8dp"
+        android:hint="Nama"
+        app:hintTextColor="@color/pink">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtUsernameLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:hint="Nama Pengguna"
+        app:hintTextColor="@color/pink">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edtPasswordLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:hint="Kata Sandi"
-        android:layout_marginTop="8dp"
         android:layout_gravity="center"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:layout_marginTop="8dp"
+        android:hint="Kata Sandi">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edtConfirmPassLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:hint="Konfirmasi Kata Sandi"
-        android:layout_marginTop="8dp"
         android:layout_gravity="center"
+        android:layout_marginTop="8dp"
 
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:hint="Konfirmasi Kata Sandi">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtConfirmPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/baseline_remove_red_eye_24"
-            android:inputType="textPassword"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/button"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
-        android:text="Masuk"
         android:backgroundTint="@color/pink"
-        app:cornerRadius ="6dp"/>
+        android:text="Masuk"
+        app:cornerRadius="6dp" />
 
     <RelativeLayout
         android:layout_width="256dp"
@@ -130,7 +153,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="Sudah punya akun? Masuk!"/>
+            android:text="Sudah punya akun? Masuk!" />
     </RelativeLayout>
 
 </LinearLayout>

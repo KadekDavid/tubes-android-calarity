@@ -7,11 +7,6 @@
     android:orientation="vertical"
     tools:context=".ui.user.RegisterActivity">
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -80,8 +75,8 @@
 
         <TextView
             android:id="@+id/textInfoProfil"
-            android:layout_width="91dp"
-            android:layout_height="23dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="21dp"
             android:layout_marginTop="16dp"
             android:text="Info profil"
@@ -119,7 +114,7 @@
 
         <View
             android:id="@+id/pembatas1"
-            android:layout_width="409dp"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
             android:background="?android:attr/listDivider"
@@ -149,7 +144,7 @@
 
         <View
             android:id="@+id/pembatas2"
-            android:layout_width="460dp"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
             android:background="?android:attr/listDivider"
