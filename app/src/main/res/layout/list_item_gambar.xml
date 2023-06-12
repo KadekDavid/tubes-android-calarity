@@ -8,10 +8,7 @@
     app:cardCornerRadius="15dp"
     android:padding="5dp"
     android:layout_margin="5dp"
-    android:id="@+id/cardViewHome"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    tools:context=".ui.home.HomeActivity"
-    tools:listitem="@layout/list_item_gambar">
+    android:id="@+id/cardViewHome">
 
     <LinearLayout
         android:layout_width="match_parent"
