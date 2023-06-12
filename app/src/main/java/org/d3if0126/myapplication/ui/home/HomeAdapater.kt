@@ -16,13 +16,13 @@ class HomeAdapter(
 ) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.ImageView2)
-        val judulTextView: TextView = itemView.findViewById(R.id.judul)
-        val hargaTextView: TextView = itemView.findViewById(R.id.harga)
+        val imageView: ImageView = itemView.findViewById(R.id.ivProductImg)
+        val judulTextView: TextView = itemView.findViewById(R.id.tvProductName)
+        val hargaTextView: TextView = itemView.findViewById(R.id.tvProductPrice)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item_gambar, parent, false)
         return ViewHolder(itemView)
     }
 

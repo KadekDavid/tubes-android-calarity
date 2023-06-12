@@ -8,7 +8,10 @@
     app:cardCornerRadius="15dp"
     android:padding="5dp"
     android:layout_margin="5dp"
-    android:id="@+id/cardViewHome">
+    android:id="@+id/cardViewHome"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    tools:context=".ui.home.HomeActivity"
+    tools:listitem="@layout/list_item_gambar">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,21 +32,23 @@
 
             <TextView
                 android:id="@+id/tvProductName"
-                android:layout_width="wrap_content"
-                android:layout_height   ="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:singleLine="true"
                 android:text="Product Name"
-                android:textSize="16sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:label="add"
                 android:background="@drawable/baseline_add_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -56,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="Rp. 15.000"
+            android:textColor="@color/black"
             android:textSize="12sp" />
 
     </LinearLayout>
