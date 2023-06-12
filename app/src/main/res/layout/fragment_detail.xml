@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
+
     <View
         android:id="@+id/divider"
         android:layout_width="409dp"

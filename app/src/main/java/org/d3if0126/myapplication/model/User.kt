@@ -1,4 +1,4 @@
-package org.d3if0126.myapplication.ui.user
+package org.d3if0126.myapplication.model
 
 import androidx.annotation.Keep
 

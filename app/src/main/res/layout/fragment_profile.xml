@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.user.RegisterActivity">
+    tools:context=".ui.user.RegisterFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -91,7 +91,7 @@
             android:layout_width="106dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="60dp"
             android:backgroundTint="@color/teal_700"
             android:text="SAVE"
             app:cornerRadius="6dp"
@@ -101,10 +101,10 @@
 
         <Button
             android:id="@+id/buttonLogout"
-            android:layout_width="206dp"
+            android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="15dp"
             android:backgroundTint="@color/black"
             android:text="LOGOUT"
             app:cornerRadius="6dp"
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="21dp"
             android:layout_marginTop="18dp"
-            android:text="Password"
+            android:text="Username"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textEmail" />
 
@@ -218,7 +218,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textHasilNama" />
 
         <TextView
-            android:id="@+id/textHasilPassword"
+            android:id="@+id/textHasilUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -226,18 +226,6 @@
             android:text="falahdwi"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textNama"
-            app:layout_constraintTop_toBottomOf="@+id/textHasilEmail" />
-
-
-        <ImageButton
-            android:id="@+id/showPasswordButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_eye_closed"
-            app:layout_constraintBottom_toTopOf="@+id/pembatas2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textHasilPassword"
             app:layout_constraintTop_toBottomOf="@+id/textHasilEmail" />
 
         <TextView
