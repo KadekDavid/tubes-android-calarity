@@ -88,11 +88,11 @@
 
         <Button
             android:id="@+id/buttonSave"
-            android:layout_width="206dp"
+            android:layout_width="106dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="90dp"
-            android:backgroundTint="@color/pink"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="@color/teal_700"
             android:text="SAVE"
             app:cornerRadius="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -101,11 +101,11 @@
 
         <Button
             android:id="@+id/buttonLogout"
-            android:layout_width="256dp"
+            android:layout_width="206dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="32dp"
-            android:backgroundTint="@color/pink"
+            android:backgroundTint="@color/black"
             android:text="LOGOUT"
             app:cornerRadius="6dp"
             app:layout_constraintBottom_toBottomOf="parent"

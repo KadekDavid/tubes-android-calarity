@@ -15,8 +15,8 @@ import org.d3if0126.myapplication.databinding.ActivityHomeBinding
 import org.d3if0126.myapplication.ui.user.ProfileActivity
 
 class HomeActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityHomeBinding
 
+    private lateinit var binding: ActivityHomeBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var listImages: ArrayList<HomeDataClass>
     private lateinit var databaseReference: DatabaseReference
@@ -25,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         recyclerView = findViewById(R.id.recyclerViewHome)
         listImages = arrayListOf()

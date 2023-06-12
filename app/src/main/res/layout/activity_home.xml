@@ -138,7 +138,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="490dp"
+        android:layout_height="450dp"
         android:layout_marginTop="4dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -170,6 +170,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            app:fabCradleMargin="10dp"
+            app:fabCradleRoundedCornerRadius="10dp"
+            app:fabCradleVerticalOffset="10dp"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -181,30 +184,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:menu="@menu/menu_bottom">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:layout_width="102dp"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/keranjang"
-                        android:gravity="center"
-                        android:paddingBottom="5dp"
-                        android:src="@drawable/baseline_shopping_cart_24"
-                        app:backgroundTint="@color/pink"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:tint="#FFFFFF" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="102dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/keranjang"
+                    android:src="@drawable/baseline_shopping_cart_24"
+                    app:backgroundTint="@color/pink"
+                    app:tint="#FFFFFF" />
 
 
             </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 
         </com.google.android.material.bottomappbar.BottomAppBar>
 

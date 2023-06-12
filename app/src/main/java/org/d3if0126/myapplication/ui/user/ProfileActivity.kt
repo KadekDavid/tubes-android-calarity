@@ -23,7 +23,8 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.hide()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         firebaseAuth = FirebaseAuth.getInstance()
         databaseReference = FirebaseDatabase.getInstance().reference
@@ -55,11 +56,11 @@ class ProfileActivity : AppCompatActivity() {
             })
         }
 
-//        binding.buttonLogout.setOnClickListener {
-//            firebaseAuth.signOut()
-//            startActivity(Intent(this, LoginActivity::class.java))
-//            finish()
-//        }
+        binding.buttonLogout.setOnClickListener {
+            firebaseAuth.signOut()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
 //        binding.buttonSave.setOnClickListener {
 //            var noHp = binding.edtNoHP.text.toString()
 //            var alamat = binding.edtAlamat.text.toString()

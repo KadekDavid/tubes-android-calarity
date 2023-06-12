@@ -19,7 +19,6 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -34,6 +33,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             var email = binding.edtEmail.text.toString()
             var name = binding.edtNama.text.toString()
+            var namaPengguna = binding.etUsername.text.toString()
             var pass = binding.edtPassword.text.toString()
             var confirmPass = binding.edtConfirmPass.text.toString()
 
@@ -45,7 +45,7 @@ class RegisterActivity : AppCompatActivity() {
                             if (currentUser != null) {
                                 var uid = currentUser.uid
 
-                                var user = User(name,email,pass)
+                                var user = User(email,name,namaPengguna,pass)
 
                                 var userRef = databaseReference.child("users").child(uid)
                                 userRef.setValue(user).addOnCompleteListener {
@@ -66,7 +66,9 @@ class RegisterActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(this, "Password is not matching", Toast.LENGTH_SHORT).show()
                 }
-            } else {
+            }
+
+            else {
                 Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
             }
         }
