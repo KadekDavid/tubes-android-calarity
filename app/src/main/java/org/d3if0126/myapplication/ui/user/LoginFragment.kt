@@ -56,8 +56,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 ).show()
             }
         }
-
-
         binding.daftarSekarang.setOnClickListener {
             Navigation.findNavController(requireActivity(), R.id.fragmentContainerView)
                 .navigate(R.id.action_loginFragment_to_registerFragment)

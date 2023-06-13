@@ -30,6 +30,7 @@ class HomeFragment : Fragment(R.layout.fragment_home){
         listImages = arrayListOf()
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
+
         databaseReference = FirebaseDatabase.getInstance().getReference("mitraGambar")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

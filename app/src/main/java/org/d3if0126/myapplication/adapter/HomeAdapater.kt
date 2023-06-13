@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.d3if0126.myapplication.R
@@ -41,12 +43,23 @@ class HomeAdapter(
             intent.putExtra("judul", currentItem.judul)
             intent.putExtra("harga", currentItem.harga)
 
-            holder.itemView.context.startActivity(intent)
-        }
-    }
+            holder.itemView.setOnClickListener {
+                val bundle = bundleOf(
+                    "url" to currentItem.url,
+                    "judul" to currentItem.judul,
+                    "harga" to currentItem.harga
+                )
+                it.findNavController().navigate(R.id.detailFragment, bundle)
+            }
 
+        }
+
+        }
     override fun getItemCount(): Int {
         return listImages.size
     }
-}
+    }
+
+
+
 

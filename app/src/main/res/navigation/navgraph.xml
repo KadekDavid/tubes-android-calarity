@@ -43,7 +43,15 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="org.d3if0126.myapplication.ui.detail.DetailFragment"
-        android:label="DetailFragment" />
+        android:label="DetailFragment" >
+        <action
+            android:id="@+id/action_detailFragment_to_keranjangFragment"
+            app:destination="@id/keranjangFragment" />
+        <argument
+            android:name="productId"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="org.d3if0126.myapplication.ui.profile.ProfileFragment"
@@ -55,4 +63,9 @@
             android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/keranjangFragment"
+        android:name="org.d3if0126.myapplication.ui.keranjang.KeranjangFragment"
+        android:label="fragment_keranjang"
+        tools:layout="@layout/fragment_keranjang" />
 </navigation>
