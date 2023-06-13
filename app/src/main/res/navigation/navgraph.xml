@@ -48,9 +48,8 @@
             android:id="@+id/action_detailFragment_to_keranjangFragment"
             app:destination="@id/keranjangFragment" />
         <argument
-            android:name="productId"
-            app:argType="string"
-            android:defaultValue="null" />
+            android:name="imageUrl"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"

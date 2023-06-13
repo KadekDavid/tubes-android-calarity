@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
+import com.bumptech.glide.Glide
 import com.google.firebase.database.*
 import org.d3if0126.myapplication.R
 import org.d3if0126.myapplication.databinding.FragmentDetailBinding
@@ -16,8 +17,6 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private lateinit var binding: FragmentDetailBinding
     private lateinit var databaseReference: DatabaseReference
-
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,6 +32,13 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                         val judul = dataSnapshot.child("judul").getValue(String::class.java)
                         val harga = dataSnapshot.child("harga").getValue(String::class.java)
                         val deskripsi = dataSnapshot.child("deskripsi").getValue(String::class.java)
+                        val imageUrl = arguments?.getString("url")
+
+                        // Tampilkan gambar menggunakan imageUrl
+                        Glide.with(requireContext())
+                            .load(imageUrl)
+                            .into(binding.viewImage)
+
 
                         binding.textHarga.text = harga
                         binding.txtDeskripsi.text = deskripsi
