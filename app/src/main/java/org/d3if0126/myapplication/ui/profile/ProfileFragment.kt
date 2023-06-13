@@ -61,5 +61,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             Navigation.findNavController(requireActivity(), R.id.fragmentContainerView)
                 .navigate(R.id.action_profileFragment_to_loginFragment)
         }
+
     }
 }

@@ -10,4 +10,6 @@
     <color name="pink">#FF696A</color>
     <color name="biru_500">#3b82f6</color>
     <color name="biru_700">#1d4ed8</color>
+    <color name="background">#f2f2f2</color>
+
 </resources>

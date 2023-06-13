@@ -19,8 +19,6 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentKeranjangBinding.bind(view)
-
-
     }
 
     fun tambahDataKeKeranjang (namaProduk: String, hargaProduk: String) {

@@ -41,7 +41,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
 
                         binding.textHarga.text = harga
-                        binding.txtDeskripsi.text = deskripsi
+                        binding.textPenjelasan.text = deskripsi
                         binding.textJudul.text = judul
                     }
                 }
@@ -57,6 +57,18 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             keranjangFragment?.tambahDataKeKeranjang(namaProduk, hargaProduk)
             Navigation.findNavController(requireActivity(), R.id.fragmentContainerView)
                 .navigate(R.id.action_detailFragment_to_keranjangFragment)
+        }
+        binding.floatingActionButton.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.home -> false
+
+                R.id.account -> {
+                    Navigation.findNavController(requireActivity(), R.id.fragmentContainerView)
+                        .navigate(R.id.action_detailFragment_to_profileFragment)
+                    true
+                }
+                else -> false
+            }
         }
     }
 }
