@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dialog_bg"
-    tools:context=".ui.keranjang.KeranjangFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.keranjang.KeranjangFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/judul"
@@ -44,15 +44,15 @@
         app:layout_constraintTop_toBottomOf="@id/judul">
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewBottomSheet"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/list_item_keranjang">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_item_keranjang">
 
-            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -68,8 +68,10 @@
                 android:layout_margin="16dp"
                 android:contentDescription="@string/extended_fab_content_desc"
                 android:text="@string/extended_fab_label"
-                app:backgroundTint="@color/pink"
-                app:icon="@drawable/baseline_shopping_cart_24" />
+                android:textColor="@color/white"
+                app:backgroundTint="@color/biru_700"
+                app:icon="@drawable/baseline_shopping_cart_24"
+                app:iconTint="@color/white" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

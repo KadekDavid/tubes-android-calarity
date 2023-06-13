@@ -46,7 +46,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:hint="Email"
-        app:hintTextColor="@color/pink">
+        app:hintTextColor="@color/biru_700">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtEmail"
@@ -65,7 +65,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:hint="Nama"
-        app:hintTextColor="@color/pink">
+        app:hintTextColor="@color/biru_700">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtNama"
@@ -84,7 +84,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:hint="Nama Pengguna"
-        app:hintTextColor="@color/pink">
+        app:hintTextColor="@color/biru_700">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etUsername"
@@ -102,7 +102,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:hint="Kata Sandi">
+        android:hint="Kata Sandi"
+        app:hintTextColor="@color/biru_700">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtPassword"
@@ -120,8 +121,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-
-        android:hint="Konfirmasi Kata Sandi">
+        android:hint="Konfirmasi Kata Sandi"
+        app:hintTextColor="@color/biru_700">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtConfirmPass"
@@ -139,7 +140,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@color/pink"
+        android:backgroundTint="@color/biru_700"
         android:text="Masuk"
         app:cornerRadius="6dp" />
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".ui.user.RegisterFragment">
 
@@ -12,105 +13,63 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtAlamat"
-            android:layout_width="203dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="20dp"
-            android:imeOptions="actionNext"
-            android:inputType="textEmailAddress"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/textUserID"
-            app:layout_constraintTop_toBottomOf="@+id/edtNoHP" />
-
-        <TextView
-            android:id="@+id/textNama"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewTop"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="32dp"
-            android:text="Nama"
+            app:cardBackgroundColor="@color/biru_500"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInfoProfil" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/profile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
-            android:padding="5dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/circular"
-            app:strokeColor="@color/pink"
-            app:strokeWidth="2dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tvNamaa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Falah Dwi Handoyo"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/profile"
-            app:layout_constraintStart_toStartOf="@+id/profile"
-            app:layout_constraintTop_toBottomOf="@+id/profile" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/circular"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="2dp" />
 
-        <TextView
-            android:id="@+id/tvEmaill"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:gravity="center"
-            android:text="falahdwh@gmail.com"
-            app:layout_constraintEnd_toEndOf="@+id/tvNamaa"
-            app:layout_constraintStart_toStartOf="@+id/tvNamaa"
-            app:layout_constraintTop_toBottomOf="@+id/tvNamaa" />
+                <TextView
+                    android:id="@+id/tvNamaa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="Falah Dwi Handoyo"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/profile"
+                    app:layout_constraintStart_toStartOf="@+id/profile"
+                    app:layout_constraintTop_toBottomOf="@+id/profile" />
 
-        <TextView
-            android:id="@+id/textInfoProfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="16dp"
-            android:text="Info profil"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pembatas1" />
+                <TextView
+                    android:id="@+id/tvEmaill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="falahdwh@gmail.com"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/tvNamaa"
+                    app:layout_constraintStart_toStartOf="@+id/tvNamaa"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNamaa" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
+        </androidx.cardview.widget.CardView>
 
-        <Button
-            android:id="@+id/buttonSave"
-            android:layout_width="106dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="60dp"
-            android:backgroundTint="@color/teal_700"
-            android:text="SAVE"
-            app:cornerRadius="6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/buttonLogout"
-            android:layout_width="116dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
-            android:backgroundTint="@color/black"
-            android:text="LOGOUT"
-            app:cornerRadius="6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <View
             android:id="@+id/pembatas1"
@@ -120,135 +79,135 @@
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmaill" />
+            app:layout_constraintTop_toBottomOf="@+id/cardViewTop" />
 
-        <TextView
-            android:id="@+id/textUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="18dp"
-            android:text="Username"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textEmail" />
-
-        <TextView
-            android:id="@+id/textEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="18dp"
-            android:text="Email"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textNama" />
-
-        <View
-            android:id="@+id/pembatas2"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewMain"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:background="?android:attr/listDivider"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pembatas1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textInfoProfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+
+                    android:text="Info profil"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textUserID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="16dp"
+                    android:text="User ID"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInfoProfil" />
+
+                <TextView
+                    android:id="@+id/textHasilUserId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="16dp"
+                    android:text="KtcdJrLNiTWy6Z3Y8zqq09RfwO32"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textUserID"
+                    app:layout_constraintStart_toEndOf="@+id/textUserID"
+                    app:layout_constraintTop_toBottomOf="@+id/textInfoProfil" />
+
+                <TextView
+                    android:id="@+id/textNama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Nama"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textUserID" />
+
+                <TextView
+                    android:id="@+id/textHasilNama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Falah Dwihandoyo"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textNama"
+                    app:layout_constraintStart_toStartOf="@+id/textHasilUserId"
+                    app:layout_constraintTop_toTopOf="@+id/textNama" />
+
+                <TextView
+                    android:id="@+id/textEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="18dp"
+                    android:text="Email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textNama" />
+
+                <TextView
+                    android:id="@+id/textHasilEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="falahdwh@gmail.com"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textEmail"
+                    app:layout_constraintStart_toStartOf="@+id/textHasilNama"
+                    app:layout_constraintTop_toTopOf="@+id/textEmail" />
+
+                <TextView
+                    android:id="@+id/textUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="18dp"
+                    android:text="Username"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+
+                <TextView
+                    android:id="@+id/textHasilUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="falahdwi"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textUsername"
+                    app:layout_constraintStart_toStartOf="@+id/textHasilEmail"
+                    app:layout_constraintTop_toTopOf="@+id/textUsername" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/buttonLogout"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="@color/biru_700"
+            android:text="LOGOUT"
+            app:cornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.511"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textUsername" />
+            app:layout_constraintTop_toBottomOf="@+id/cardViewMain" />
 
-        <TextView
-            android:id="@+id/textInfoPribadi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="18dp"
-            android:text="Info pribadi"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pembatas2" />
 
-        <TextView
-            android:id="@+id/textUserID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="32dp"
-            android:text="User ID"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInfoPribadi" />
-
-        <TextView
-            android:id="@+id/textNomorHP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="40dp"
-            android:text="Nomor HP"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textUserID" />
-
-        <TextView
-            android:id="@+id/textAlamat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="40dp"
-            android:text="Alamat"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textNomorHP" />
-
-        <TextView
-            android:id="@+id/textHasilNama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="32dp"
-            android:text="Falah Dwihandoyo"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/textNama"
-            app:layout_constraintTop_toBottomOf="@+id/textInfoProfil" />
-
-        <TextView
-            android:id="@+id/textHasilEmail"
-            android:layout_width="162dp"
-            android:layout_height="17dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="18dp"
-            android:text="falahdwh@gmail.com"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/textNama"
-            app:layout_constraintTop_toBottomOf="@+id/textHasilNama" />
-
-        <TextView
-            android:id="@+id/textHasilUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="18dp"
-            android:text="falahdwi"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/textNama"
-            app:layout_constraintTop_toBottomOf="@+id/textHasilEmail" />
-
-        <TextView
-            android:id="@+id/textHasilUserId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="32dp"
-            android:text="KtcdJrLNiTWy6Z3Y8zqq09RfwO32"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/textUserID"
-            app:layout_constraintTop_toBottomOf="@+id/textInfoPribadi" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtNoHP"
-            android:layout_width="203dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="28dp"
-            android:imeOptions="actionNext"
-            android:inputType="textEmailAddress"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/textUserID"
-            app:layout_constraintTop_toBottomOf="@+id/textHasilUserId" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

@@ -23,8 +23,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="15dp"
                 app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -52,11 +52,11 @@
                 android:id="@+id/cardViewTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="32dp"
-                android:layout_margin="16dp"
-                app:cardCornerRadius="15dp"
                 app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
                 app:layout_constraintTop_toBottomOf="@+id/divider">
 
                 <LinearLayout
@@ -107,8 +107,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="32dp"
-                app:cardCornerRadius="15dp"
                 app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
                 app:layout_constraintTop_toBottomOf="@+id/divider2">
 
                 <LinearLayout
@@ -133,8 +133,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="21dp"
-                        android:layout_marginEnd="21dp"
                         android:layout_marginTop="16dp"
+                        android:layout_marginEnd="21dp"
                         android:paddingBottom="16dp"
                         android:text="Jasa Desain Promo Feed IG adalah"
                         android:textSize="16dp"
@@ -143,6 +143,7 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <Button
                 android:id="@+id/btnKeranjang"
                 android:layout_width="wrap_content"
@@ -151,28 +152,50 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:text="Keranjang"
-                app:layout_constraintTop_toBottomOf="@+id/cardViewDescription"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewDescription" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/floatingActionButton"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/constraintBottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu_bottom">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="102dp"
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:contentDescription="@string/keranjang"
-            android:src="@drawable/baseline_shopping_cart_24"
-            app:backgroundTint="@color/pink"
-            app:tint="#FFFFFF" />
+            android:layout_gravity="bottom"
+            app:fabCradleMargin="10dp"
+            app:fabCradleRoundedCornerRadius="10dp"
+            app:fabCradleVerticalOffset="10dp"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/floatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/transparent_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:menu="@menu/menu_bottom">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="102dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/keranjang"
+                    android:src="@drawable/baseline_shopping_cart_24"
+                    app:backgroundTint="@color/biru_700"
+                    app:tint="#FFFFFF" />
+
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
