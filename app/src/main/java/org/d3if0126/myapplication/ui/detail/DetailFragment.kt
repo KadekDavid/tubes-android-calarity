@@ -54,7 +54,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             val namaProduk = binding.textJudul.text.toString()
             val hargaProduk = binding.textHarga.text.toString()
             val keranjangFragment = KeranjangFragment()
-            keranjangFragment?.tambahDataKeKeranjang(namaProduk, hargaProduk)
+            keranjangFragment.tambahDataKeKeranjang(namaProduk, hargaProduk)
             Navigation.findNavController(requireActivity(), R.id.fragmentContainerView)
                 .navigate(R.id.action_detailFragment_to_keranjangFragment)
         }

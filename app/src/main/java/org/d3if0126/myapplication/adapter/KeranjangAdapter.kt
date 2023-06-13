@@ -13,8 +13,13 @@ import org.d3if0126.myapplication.model.Keranjang
 
 class KeranjangAdapter(
     private val context: Context,
-    private val listKeranjang: List<Keranjang>
+    private var listKeranjang: List<Keranjang>
 ) : RecyclerView.Adapter<KeranjangAdapter.ViewHolder>() {
+
+    fun updateData(newList: List<Keranjang>) {
+        listKeranjang = newList
+        notifyDataSetChanged()
+    }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageProduk: ImageView = itemView.findViewById(R.id.ivProductImg)
@@ -33,10 +38,9 @@ class KeranjangAdapter(
         holder.textHargaProduk.text = keranjang.harga
 
         // Tampilkan gambar produk menggunakan Glide atau library lainnya
-//        Glide.with(context)
-//            .load(keranjang.url)
-//            .placeholder(R.drawable.placeholder)
-//            .into(holder.imageProduk)
+        Glide.with(context)
+            .load(keranjang.url)
+            .into(holder.imageProduk)
     }
 
     override fun getItemCount(): Int {

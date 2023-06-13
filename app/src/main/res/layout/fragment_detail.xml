@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -14,13 +15,16 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -50,6 +54,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="32dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@+id/divider">
 
                 <LinearLayout
@@ -100,6 +107,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="32dp"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@+id/divider2">
 
                 <LinearLayout
@@ -112,7 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="21dp"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="16dp"
                         android:text="Deskripsi Produk"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -124,7 +133,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="21dp"
-                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="21dp"
+                        android:layout_marginTop="16dp"
+                        android:paddingBottom="16dp"
                         android:text="Jasa Desain Promo Feed IG adalah"
                         android:textSize="16dp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -138,6 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="Keranjang"
                 app:layout_constraintTop_toBottomOf="@+id/cardViewDescription"
                 app:layout_constraintEnd_toEndOf="parent"/>
