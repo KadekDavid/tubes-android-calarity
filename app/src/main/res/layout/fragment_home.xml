@@ -18,7 +18,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:paddingBottom="8dp">
 
             <TextView
                 android:id="@+id/tvKatalog"
@@ -57,7 +58,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/btnLogo"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_gravity="center"
@@ -91,7 +92,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/imageView3"
+                            android:id="@+id/btnFeed"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_gravity="center"
@@ -125,7 +126,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/btnPoster"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_gravity="center"

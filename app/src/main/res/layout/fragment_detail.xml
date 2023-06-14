@@ -32,6 +32,7 @@
                     android:id="@+id/viewImage"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:scaleType="fitXY"
                     tools:src="@drawable/baseline_broken_image_24" />
 
             </androidx.cardview.widget.CardView>

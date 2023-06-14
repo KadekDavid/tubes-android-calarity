@@ -2,6 +2,7 @@ package org.d3if0126.myapplication.ui.home
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,11 +15,14 @@ import com.bumptech.glide.Glide
 import org.d3if0126.myapplication.R
 import org.d3if0126.myapplication.model.Home
 import org.d3if0126.myapplication.ui.detail.DetailFragment
+import org.d3if0126.myapplication.ui.keranjang.KeranjangFragment
 
 class HomeAdapter(
     private val context: Context,
     private val listImages: ArrayList<Home>
 ) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+
+    private var keranjangItemList: List<Home> = listOf()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.ivProductImg)
@@ -37,6 +41,7 @@ class HomeAdapter(
         holder.judulTextView.text = currentItem.judul
         holder.hargaTextView.text = currentItem.harga
 
+
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DetailFragment::class.java)
             intent.putExtra("url", currentItem.url)
@@ -47,18 +52,36 @@ class HomeAdapter(
                 val bundle = bundleOf(
                     "url" to currentItem.url,
                     "judul" to currentItem.judul,
-                    "harga" to currentItem.harga
+                    "harga" to currentItem.harga,
+                    "deskripsi" to currentItem.deskripsi
                 )
                 it.findNavController().navigate(R.id.detailFragment, bundle)
             }
 
-        }
+            val url = currentItem.url
+            val judul = currentItem.judul
+            val harga = currentItem.harga
 
+
+            val keranjangFragment = KeranjangFragment()
+
+            val bundle = Bundle()
+            bundle.putString("url", url)
+            bundle.putString("judul", judul)
+            bundle.putString("harga", harga)
+
+
+            keranjangFragment.arguments = bundle
+
+            // Navigasi ke KeranjangFragment
+            it.findNavController().navigate(R.id.detailFragment, bundle)
         }
+    }
     override fun getItemCount(): Int {
         return listImages.size
     }
-    }
+
+}
 
 
 
