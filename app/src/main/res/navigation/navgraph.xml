@@ -94,6 +94,9 @@
         <action
             android:id="@+id/action_keranjangFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_keranjangFragment_to_transaksiFragment"
+            app:destination="@id/transaksiFragment" />
     </fragment>
     <fragment
         android:id="@+id/tentangAplikasiFragment"
@@ -103,4 +106,8 @@
         android:id="@+id/tentangKitaFragment"
         android:name="org.d3if0126.myapplication.ui.profile.TentangKitaFragment"
         android:label="TentangKitaFragment" />
+    <fragment
+        android:id="@+id/transaksiFragment"
+        android:name="org.d3if0126.myapplication.ui.transaksi.TransaksiFragment"
+        android:label="TransaksiFragment" />
 </navigation>

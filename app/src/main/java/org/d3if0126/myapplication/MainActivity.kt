@@ -13,10 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
 
-        auth = FirebaseAuth.getInstance()
 
 
-        // Change the color of the status bar
         window.statusBarColor = ContextCompat.getColor(this, R.color.black)
 
     }

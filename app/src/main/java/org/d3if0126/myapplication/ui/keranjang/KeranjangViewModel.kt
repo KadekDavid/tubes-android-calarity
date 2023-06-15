@@ -16,6 +16,10 @@ class KeranjangViewModel : ViewModel() {
         keranjangManager.addItemToKeranjang(item)
     }
 
+    fun clearKeranjang() {
+        keranjangManager.clearKeranjang()
+    }
+
     fun retrieveKeranjangItems() {
         keranjangManager.getKeranjangItems { itemList ->
             _keranjangItemList.value = itemList
