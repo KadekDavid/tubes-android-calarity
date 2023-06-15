@@ -3,15 +3,22 @@ package org.d3if0126.myapplication.ui.keranjang
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import org.d3if0126.myapplication.model.Home
+import androidx.lifecycle.LiveData
+
 
 class KeranjangViewModel : ViewModel() {
-    val keranjangItemList: MutableLiveData<MutableList<Home>> by lazy {
-        MutableLiveData<MutableList<Home>>()
-    }
+    private val keranjangManager = KeranjangManager()
+
+    private val _keranjangItemList: MutableLiveData<List<Home>> = MutableLiveData()
+    val keranjangItemList: LiveData<List<Home>> get() = _keranjangItemList
 
     fun addItemToKeranjang(item: Home) {
-        val currentList = keranjangItemList.value ?: mutableListOf()
-        currentList.add(item)
-        keranjangItemList.value = currentList
+        keranjangManager.addItemToKeranjang(item)
+    }
+
+    fun retrieveKeranjangItems() {
+        keranjangManager.getKeranjangItems { itemList ->
+            _keranjangItemList.value = itemList
+        }
     }
 }

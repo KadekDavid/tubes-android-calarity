@@ -218,6 +218,7 @@
                 app:menu="@menu/menu_bottom">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id = "@+id/floating"
                     android:layout_width="102dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

@@ -5,5 +5,5 @@ data class Home(
     val url: String?= "",
     val judul: String?="",
     val harga: String?="",
-    val deskripsi: String? = ""
+
 )

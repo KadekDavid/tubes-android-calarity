@@ -53,7 +53,7 @@ class HomeAdapter(
                     "url" to currentItem.url,
                     "judul" to currentItem.judul,
                     "harga" to currentItem.harga,
-                    "deskripsi" to currentItem.deskripsi
+
                 )
                 it.findNavController().navigate(R.id.detailFragment, bundle)
             }

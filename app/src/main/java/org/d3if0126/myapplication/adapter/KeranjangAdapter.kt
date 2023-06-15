@@ -1,5 +1,7 @@
 package org.d3if0126.myapplication.adapter
 
+
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
