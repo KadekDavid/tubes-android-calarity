@@ -11,6 +11,9 @@ class KeranjangManager {
         val newItemRef = keranjangRef.push()
         newItemRef.setValue(item)
     }
+    fun clearKeranjang() {
+        keranjangRef.removeValue()
+    }
 
     fun getKeranjangItems(callback: (List<Home>) -> Unit) {
         keranjangRef.addValueEventListener(object : ValueEventListener {

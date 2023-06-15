@@ -3,12 +3,14 @@ package org.d3if0126.myapplication.ui.home
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 import org.d3if0126.myapplication.R
@@ -25,7 +27,6 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     private lateinit var listImages: ArrayList<Home>
     private lateinit var databaseReference: DatabaseReference
     private lateinit var keranjangViewModel: KeranjangViewModel
-
     private var currentKategori: String = "all" // Kategori default
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -128,10 +129,17 @@ class HomeFragment : Fragment(R.layout.fragment_home){
                 else -> false
             }
         }
-        binding.floatingActionButton.setOnClickListener {
-            // Navigasi ke fragmen lain
-            findNavController().navigate(R.id.action_homeFragment_to_keranjangFragment)
+        fabNavigate.setOnClickListener {
+            val judul = arguments?.getString("judul")
+            val harga = arguments?.getString("harga")
+            val imageUrl = arguments?.getString("url")
+
+            val keranjangItem = Home(imageUrl, judul, harga)
+            keranjangViewModel.addItemToKeranjang(keranjangItem)
+            showBottomSheetDialog()
         }
+
+
     }
 
     private fun loadImages() {
@@ -163,4 +171,24 @@ class HomeFragment : Fragment(R.layout.fragment_home){
         })
     }
 
+    private fun showBottomSheetDialog() {
+        val bottomSheetView = layoutInflater.inflate(R.layout.fragment_keranjang, null)
+
+
+        val judul = arguments?.getString("judul")
+        val harga = arguments?.getString("harga")
+        val imageUrl = arguments?.getString("url")
+
+        val keranjangItem = Home(imageUrl, judul, harga)
+        keranjangViewModel.addItemToKeranjang(keranjangItem)
+
+        val dialog = BottomSheetDialog(requireContext())
+        dialog.setContentView(bottomSheetView)
+        dialog.show()
+
+        val button = bottomSheetView.findViewById<AppCompatImageView>(R.id.btnExit)
+        button.setOnClickListener {
+            dialog.dismiss()
+        }
+    }
 }

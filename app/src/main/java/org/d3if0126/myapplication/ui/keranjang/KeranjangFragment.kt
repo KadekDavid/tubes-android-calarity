@@ -2,11 +2,15 @@ package org.d3if0126.myapplication.ui.keranjang
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.d3if0126.myapplication.R
 import org.d3if0126.myapplication.adapter.KeranjangAdapter
@@ -19,21 +23,15 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
     private lateinit var keranjangAdapter: KeranjangAdapter
     private lateinit var keranjangViewModel: KeranjangViewModel
     private lateinit var imageView: ImageView
-    private lateinit var keranjangManager : KeranjangManager
+    private lateinit var keranjangManager: KeranjangManager
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentKeranjangBinding.bind(view)
-        imageView = binding.imageView4
-
+        imageView = binding.btnExit
         keranjangViewModel = ViewModelProvider(this).get(KeranjangViewModel::class.java)
-
-
-
-
         keranjangAdapter = KeranjangAdapter(requireContext(), keranjangItemList)
         binding.recyclerViewBottomSheet.adapter = keranjangAdapter
-
         binding.recyclerViewBottomSheet.layoutManager = LinearLayoutManager(requireContext())
 
         retrieveKeranjangItems()
@@ -43,15 +41,19 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
             Navigation.findNavController(requireActivity(), R.id.fragmentContainerView)
                 .navigate(R.id.action_keranjangFragment_to_homeFragment)
         }
+
+        val clearButton: Button = binding.btnHapus
+        clearButton.setOnClickListener {
+            keranjangViewModel.clearKeranjang()
+        }
     }
+
     override fun onResume() {
         super.onResume()
         keranjangViewModel.retrieveKeranjangItems()
     }
 
-
     private fun retrieveKeranjangItems() {
-
         // Ambil data keranjang dari arguments
         val judul = arguments?.getString("judul")
         val harga = arguments?.getString("harga")
@@ -75,6 +77,7 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
         // Perbarui tampilan RecyclerView
         keranjangAdapter.notifyDataSetChanged()
     }
+
     private fun getRetrieveKeranjangItems() {
         keranjangViewModel.keranjangItemList.observe(viewLifecycleOwner, { itemList ->
             keranjangItemList.clear()

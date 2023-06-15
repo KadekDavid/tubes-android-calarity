@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 import org.d3if0126.myapplication.R
@@ -50,6 +52,7 @@ class DetailFragment : Fragment() {
 
         val fabNavigate: FloatingActionButton = view.findViewById(R.id.floatingdetail)
         fabNavigate.setOnClickListener {
+
             findNavController().navigate(R.id.action_detailFragment_to_keranjangFragment)
         }
 
