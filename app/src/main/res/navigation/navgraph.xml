@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_homeFragment_to_transaksiFragment"
             app:destination="@id/transaksiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment2"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -112,5 +115,9 @@
     <fragment
         android:id="@+id/transaksiFragment"
         android:name="org.d3if0126.myapplication.ui.transaksi.TransaksiFragment"
-        android:label="TransaksiFragment" />
+        android:label="TransaksiFragment" >
+        <action
+            android:id="@+id/action_transaksiFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

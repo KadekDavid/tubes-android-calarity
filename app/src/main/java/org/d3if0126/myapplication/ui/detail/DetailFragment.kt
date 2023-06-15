@@ -84,7 +84,6 @@ class DetailFragment : Fragment() {
             }
         })
 
-
         binding.btnKeranjang.setOnClickListener {
             val namaProduk = binding.textJudul.text.toString()
             val hargaProduk = binding.textHarga.text.toString()
@@ -160,7 +159,6 @@ class DetailFragment : Fragment() {
     private fun getRetrieveKeranjangItems() {
         keranjangViewModel.keranjangItemList.observe(viewLifecycleOwner, { itemList ->
             keranjangItemList.clear()
-//            keranjangItemList.addAll(itemList)
             keranjangAdapter.notifyDataSetChanged()
         })
     }

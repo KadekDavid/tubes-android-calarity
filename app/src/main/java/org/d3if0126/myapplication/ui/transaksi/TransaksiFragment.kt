@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.google.firebase.database.*
 import org.d3if0126.myapplication.R
 import org.d3if0126.myapplication.adapter.TransaksiAdapter
@@ -23,12 +24,7 @@ class TransaksiFragment : Fragment(R.layout.fragment_transaksi) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentTransaksiBinding.bind(view)
         databaseReference = FirebaseDatabase.getInstance().reference
-
-
         databaseReference = FirebaseDatabase.getInstance().getReference("keranjang")
-
-//
-
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -64,6 +60,5 @@ class TransaksiFragment : Fragment(R.layout.fragment_transaksi) {
                 Toast.makeText(requireContext(), error.toString(), Toast.LENGTH_SHORT).show()
             }
         })
-
     }
 }
