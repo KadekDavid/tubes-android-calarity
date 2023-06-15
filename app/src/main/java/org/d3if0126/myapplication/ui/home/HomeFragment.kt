@@ -78,6 +78,15 @@ class HomeFragment : Fragment(R.layout.fragment_home){
                 Toast.makeText(requireContext(), error.toString(), Toast.LENGTH_SHORT).show()
             }
         })
+        binding.extendedFab.setOnClickListener{
+            val navController = findNavController()
+            navController.navigate(R.id.action_homeFragment_to_transaksiFragment)
+        }
+
+        binding.ibKeranjang.setOnClickListener {
+            val navController = findNavController()
+            navController.navigate(R.id.action_homeFragment_to_transaksiFragment)
+        }
 
         binding.recyclerViewHome.setOnClickListener {
             val position = it.tag as Int

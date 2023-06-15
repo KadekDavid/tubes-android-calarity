@@ -17,16 +17,20 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivCategoryImg"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
-                android:background="@drawable/baseline_circle_24"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/logo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/baseline_broken_image_24"/>
+                app:shapeAppearanceOverlay="@style/circular"
+                app:strokeColor="@color/biru_700"
+                app:strokeWidth="2dp" />
 
             <TextView
                 android:id="@+id/textJudul"
@@ -64,7 +68,7 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
-                android:id="@+id/tv"
+                android:id="@+id/tvharga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

@@ -84,6 +84,7 @@ class DetailFragment : Fragment() {
             }
         })
 
+
         binding.btnKeranjang.setOnClickListener {
             val namaProduk = binding.textJudul.text.toString()
             val hargaProduk = binding.textHarga.text.toString()
@@ -128,7 +129,6 @@ class DetailFragment : Fragment() {
             } else {
                 bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
             }
-
 
             getDataKeranjang()
         }

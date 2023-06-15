@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_homeFragment_to_keranjangFragment2"
             app:destination="@id/keranjangFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_transaksiFragment"
+            app:destination="@id/transaksiFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
