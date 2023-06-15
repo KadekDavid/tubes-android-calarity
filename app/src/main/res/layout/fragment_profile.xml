@@ -194,6 +194,7 @@
         </androidx.cardview.widget.CardView>
         
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewBottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -246,7 +247,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewMain" />
+            app:layout_constraintTop_toBottomOf="@+id/cardViewBottom" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

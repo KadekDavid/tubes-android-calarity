@@ -33,9 +33,7 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     private lateinit var databaseKeranjang : DatabaseReference
     private lateinit var keranjangViewModel: KeranjangViewModel
     private lateinit var keranjangAdapter: KeranjangAdapter
-    private val keranjangManager = KeranjangManager()
     private val keranjangItemList: MutableList<Home> = mutableListOf()
-    private val _keranjangItemList: MutableLiveData<List<Home>> = MutableLiveData()
 
     private var currentKategori: String = "all" // Kategori default
 
@@ -45,8 +43,6 @@ class HomeFragment : Fragment(R.layout.fragment_home){
 
         keranjangViewModel = ViewModelProvider(this).get(KeranjangViewModel::class.java)
         keranjangAdapter = KeranjangAdapter(requireContext(), keranjangItemList)
-//        binding.recyclerViewBottomSheet.adapter = keranjangAdapter
-//        binding.recyclerViewBottomSheet.layoutManager = LinearLayoutManager(requireContext())
 
         recyclerView = binding.recyclerViewHome
 
@@ -218,7 +214,6 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     private fun getRetrieveKeranjangItems() {
         keranjangViewModel.keranjangItemList.observe(viewLifecycleOwner, { itemList ->
             keranjangItemList.clear()
-//            keranjangItemList.addAll(itemList)
             keranjangAdapter.notifyDataSetChanged()
         })
     }
