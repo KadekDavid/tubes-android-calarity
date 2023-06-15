@@ -4,17 +4,23 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 import org.d3if0126.myapplication.R
+import org.d3if0126.myapplication.adapter.KeranjangAdapter
 import org.d3if0126.myapplication.databinding.FragmentHomeBinding
+import org.d3if0126.myapplication.databinding.ListItemKeranjangBinding
 import org.d3if0126.myapplication.model.Home
 import org.d3if0126.myapplication.ui.detail.DetailFragment
+import org.d3if0126.myapplication.ui.keranjang.KeranjangManager
 import org.d3if0126.myapplication.ui.keranjang.KeranjangViewModel
 
 
@@ -24,33 +30,31 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     private lateinit var recyclerView: RecyclerView
     private lateinit var listImages: ArrayList<Home>
     private lateinit var databaseReference: DatabaseReference
+    private lateinit var databaseKeranjang : DatabaseReference
     private lateinit var keranjangViewModel: KeranjangViewModel
+    private lateinit var keranjangAdapter: KeranjangAdapter
+    private val keranjangManager = KeranjangManager()
+    private val keranjangItemList: MutableList<Home> = mutableListOf()
+    private val _keranjangItemList: MutableLiveData<List<Home>> = MutableLiveData()
 
     private var currentKategori: String = "all" // Kategori default
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        keranjangViewModel = ViewModelProvider(requireActivity()).get(KeranjangViewModel::class.java)
-
-        val fabNavigate: FloatingActionButton = view.findViewById(R.id.floating)
-        fabNavigate.setOnClickListener {
-
-            val judul = arguments?.getString("judul")
-            val harga = arguments?.getString("harga")
-            val imageUrl = arguments?.getString("url")
-
-            val keranjangItem = Home(imageUrl, judul, harga)
-            keranjangViewModel.addItemToKeranjang(keranjangItem)
-            findNavController().navigate(R.id.action_homeFragment_to_keranjangFragment)
-        }
-
         binding = FragmentHomeBinding.bind(view)
+
+        keranjangViewModel = ViewModelProvider(this).get(KeranjangViewModel::class.java)
+        keranjangAdapter = KeranjangAdapter(requireContext(), keranjangItemList)
+//        binding.recyclerViewBottomSheet.adapter = keranjangAdapter
+//        binding.recyclerViewBottomSheet.layoutManager = LinearLayoutManager(requireContext())
+
         recyclerView = binding.recyclerViewHome
+
         listImages = arrayListOf()
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
         databaseReference = FirebaseDatabase.getInstance().getReference("mitraGambar")
+        databaseKeranjang = FirebaseDatabase.getInstance().getReference("keranjang")
 
 
         databaseReference.addValueEventListener(object : ValueEventListener {
@@ -128,10 +132,49 @@ class HomeFragment : Fragment(R.layout.fragment_home){
                 else -> false
             }
         }
-        binding.floatingActionButton.setOnClickListener {
-            // Navigasi ke fragmen lain
-            findNavController().navigate(R.id.action_homeFragment_to_keranjangFragment)
+        val imageView = binding.imageView4
+        imageView.setOnClickListener {
+            binding.sheet.visibility = View.INVISIBLE
         }
+
+        binding.floating.setOnClickListener {
+            // Navigasi ke fragmen lain
+            binding.sheet.visibility = View.VISIBLE
+            val bottomSheetBehavior = BottomSheetBehavior.from(binding.sheet)
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+
+            if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            } else {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+            getRetrieveKeranjangItems()
+            getDataKeranjang()
+        }
+    }
+
+    private fun getDataKeranjang(){
+        databaseKeranjang.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    keranjangItemList.clear()
+                for (dataSnapshot in snapshot.children) {
+                    val imageUrl = dataSnapshot.child("url").getValue(String::class.java)
+                    val judul = dataSnapshot.child("judul").getValue(String::class.java)
+                    val harga = dataSnapshot.child("harga").getValue(String::class.java)
+
+                    val homeData = Home(imageUrl, judul, harga)
+                    keranjangItemList.add(homeData)
+                }
+                    binding.recyclerViewBottomSheet.adapter = KeranjangAdapter(requireContext(), keranjangItemList)
+                    binding.recyclerViewBottomSheet.adapter?.notifyDataSetChanged()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), error.toString(), Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun loadImages() {
@@ -163,4 +206,11 @@ class HomeFragment : Fragment(R.layout.fragment_home){
         })
     }
 
+    private fun getRetrieveKeranjangItems() {
+        keranjangViewModel.keranjangItemList.observe(viewLifecycleOwner, { itemList ->
+            keranjangItemList.clear()
+//            keranjangItemList.addAll(itemList)
+            keranjangAdapter.notifyDataSetChanged()
+        })
+    }
 }

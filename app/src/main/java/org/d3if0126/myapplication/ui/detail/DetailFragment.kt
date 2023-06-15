@@ -11,21 +11,24 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 import org.d3if0126.myapplication.R
 import org.d3if0126.myapplication.adapter.KeranjangAdapter
 import org.d3if0126.myapplication.databinding.FragmentDetailBinding
 import org.d3if0126.myapplication.model.Home
-import org.d3if0126.myapplication.ui.home.HomeAdapter
-import org.d3if0126.myapplication.ui.keranjang.KeranjangFragment
 import org.d3if0126.myapplication.ui.keranjang.KeranjangViewModel
+
 
 class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
     private lateinit var databaseReference: DatabaseReference
     private lateinit var keranjangViewModel: KeranjangViewModel
+    private lateinit var keranjangAdapter: KeranjangAdapter
+    private lateinit var databaseKeranjang : DatabaseReference
+    private val keranjangItemList: MutableList<Home> = mutableListOf()
 
 
     override fun onCreateView(
@@ -43,10 +46,9 @@ class DetailFragment : Fragment() {
         binding = FragmentDetailBinding.bind(view)
 
         keranjangViewModel = ViewModelProvider(requireActivity()).get(KeranjangViewModel::class.java)
-        // ...
-
+        keranjangAdapter = KeranjangAdapter(requireContext(), keranjangItemList)
         databaseReference = FirebaseDatabase.getInstance().getReference("mitraGambar")
-
+        databaseKeranjang = FirebaseDatabase.getInstance().getReference("keranjang")
 
         val fabNavigate: FloatingActionButton = view.findViewById(R.id.floatingdetail)
         fabNavigate.setOnClickListener {
@@ -110,6 +112,56 @@ class DetailFragment : Fragment() {
                 else -> false
             }
         }
-//
+        val imageView = binding.imageView4
+        imageView.setOnClickListener {
+            binding.sheet.visibility = View.INVISIBLE
+        }
+        getRetrieveKeranjangItems()
+        binding.floatingdetail.setOnClickListener {
+            // Navigasi ke fragmen lain
+            binding.sheet.visibility = View.VISIBLE
+            val bottomSheetBehavior = BottomSheetBehavior.from(binding.sheet)
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+
+            if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            } else {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+
+
+            getDataKeranjang()
+        }
+    }
+    private fun getDataKeranjang(){
+        databaseKeranjang.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    keranjangItemList.clear()
+                    for (dataSnapshot in snapshot.children) {
+                        val imageUrl = dataSnapshot.child("url").getValue(String::class.java)
+                        val judul = dataSnapshot.child("judul").getValue(String::class.java)
+                        val harga = dataSnapshot.child("harga").getValue(String::class.java)
+
+                        val homeData = Home(imageUrl, judul, harga)
+                        keranjangItemList.add(homeData)
+                    }
+                    binding.recyclerViewBottomSheet.adapter = KeranjangAdapter(requireContext(), keranjangItemList)
+                    binding.recyclerViewBottomSheet.adapter?.notifyDataSetChanged()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), error.toString(), Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun getRetrieveKeranjangItems() {
+        keranjangViewModel.keranjangItemList.observe(viewLifecycleOwner, { itemList ->
+            keranjangItemList.clear()
+//            keranjangItemList.addAll(itemList)
+            keranjangAdapter.notifyDataSetChanged()
+        })
     }
 }

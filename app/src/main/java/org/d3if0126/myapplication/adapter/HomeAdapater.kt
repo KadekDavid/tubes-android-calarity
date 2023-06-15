@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide
 import org.d3if0126.myapplication.R
 import org.d3if0126.myapplication.model.Home
 import org.d3if0126.myapplication.ui.detail.DetailFragment
-import org.d3if0126.myapplication.ui.keranjang.KeranjangFragment
+import org.d3if0126.myapplication.ui.home.HomeFragment
 
 class HomeAdapter(
     private val context: Context,
@@ -63,7 +63,7 @@ class HomeAdapter(
             val harga = currentItem.harga
 
 
-            val keranjangFragment = KeranjangFragment()
+            val homeFragment = HomeFragment()
 
             val bundle = Bundle()
             bundle.putString("url", url)
@@ -71,7 +71,7 @@ class HomeAdapter(
             bundle.putString("harga", harga)
 
 
-            keranjangFragment.arguments = bundle
+            homeFragment.arguments = bundle
 
             // Navigasi ke KeranjangFragment
             it.findNavController().navigate(R.id.detailFragment, bundle)

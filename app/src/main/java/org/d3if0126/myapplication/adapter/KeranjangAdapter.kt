@@ -19,7 +19,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.d3if0126.myapplication.R
 import org.d3if0126.myapplication.model.Home
-import org.d3if0126.myapplication.ui.keranjang.KeranjangFragment
+import org.d3if0126.myapplication.ui.home.HomeFragment
+
+//import org.d3if0126.myapplication.ui.keranjang.KeranjangFragment
 
 class KeranjangAdapter(private val context: Context, private var itemList: List<Home>) :
     RecyclerView.Adapter<KeranjangAdapter.ViewHolder>() {
@@ -52,7 +54,7 @@ class KeranjangAdapter(private val context: Context, private var itemList: List<
             val harga = currentItem.harga
 
 
-            val keranjangFragment = KeranjangFragment()
+            val homeFragment = HomeFragment()
 
             val bundle = Bundle()
             bundle.putString("url", url)
@@ -60,10 +62,10 @@ class KeranjangAdapter(private val context: Context, private var itemList: List<
             bundle.putString("harga", harga)
 
 
-            keranjangFragment.arguments = bundle
+            homeFragment.arguments = bundle
 
             // Navigasi ke KeranjangFragment
-            it.findNavController().navigate(R.id.keranjangFragment, bundle)
+//            it.findNavController().navigate(R.id.keranjangFragment, bundle)
         }
     }
 

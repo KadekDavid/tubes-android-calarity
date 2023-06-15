@@ -5,6 +5,5 @@ data class Keranjang(
     val url: String? = "",
     val judul: String? = "",
     val harga: String? = "",
-    val imageUrl: String=""
 
 )
